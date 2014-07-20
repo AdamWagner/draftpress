@@ -1,5 +1,113 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>What up!?</h1>
+
+    <div ng-controller="Controller" class="wrapper center">
+
+        <div class="text--center" id="top">
+
+             <h1 class="color--sky">DraftPress</h1>
+             <p class="text--light">community for poets and creative writers</p>
+             <img src="{{STATIC_URL}}images/draftpress.png" alt="Poetic community and tools for poets and writers" class="push--ends eight-tenths soft--sides">
+             <div ng-hide="yepMode || nopeMode || !showSurvey" ui-scrollfix class="fill--white">
+                <div class="wrapper center">
+                    <p>Would you use DraftPress?</p>
+                    <span ng-click="yepMode = !yepMode; yesPlease()" class="btn--strawberry four-tenths force-width">Yes<span class="hide--tablet">, looks interesting!</span></span>
+                    <span ng-click="nopeMode = !nopeMode; noThanks()"class="btn--sky four-tenths force-width">No<span class="hide--mobile">, sorry</span></span>
+                </div>
+             </div>
+
+             <div ng-show="yepMode" class="modal">
+                <div class="soft--sides two-thirds tablet-one-half desk-one-third center">
+
+                    <h3 class="text--normal color--sky">Cool! We're off to a good start</h3>
+                    <br>
+
+                    <input type="email" ng-model="email" placeholder="Enter your email" class="text--center" focus-on="focusMe">
+                    <div ng-click="signup()" class="btn--strawberry btn--block">Join waitlist</div>
+                    <div ng-click="yepMode = !yepMode" class="link-appearance color--sidewalk text--small push-half--top">just kidding</div>
+
+                </div>
+             </div>
+
+
+             <div ng-show="!showSurvey && email.length > 4" class="soft--sides">
+                 <h4>Thanks for your interest! I'll be in touch.</h4>
+             </div>
+
+             <div ng-show="!showSurvey && !email" class="soft--sides">
+                 <h4>Thanks for your feedback!</h4>
+             </div>
+
+             <div ng-show="nopeMode" class="modal">
+                <div class="soft--sides two-thirds tablet-one-half desk-one-third center">
+
+                     <h3 class="text--normal color--sky">No hard feelings</h3>
+                     <br>
+
+                     <ul class="list--unstyled text--left text--small center">
+
+                         <li ng-repeat="option in nopeOptions">
+                            <label ng-class="{'selected': selection.indexOf(option) > -1}">
+                              <input
+                                type="checkbox"
+                                name="selectedNopeOptions[]"
+                                value="{{option}}"
+                                ng-checked="selection.indexOf(option) > -1"
+                                ng-click="toggleSelection(option)"
+                              > {[{option}]}
+                            </label>
+                         </li>
+
+                     </ul>
+
+                     <hr>
+
+                     <div class="text--small push--top">
+                         <span ng-click="nopeMode = !nopeMode" class="link-appearance color--sidewalk">cancel</span>
+                         &nbsp;
+                         &nbsp;
+                         <span ng-click="sendNopeReasons()" class="btn--strawberry">Send feedback</span>
+                     </div>
+
+                </div>
+             </div>
+
+             <br>
+             <hr class="dashed">
+
+             <div class="push--bottom">
+                 <h3 class="color--sky">1. Write</h3>
+                 <p class="feature-text">a simple editor with structural analysis, rhyme suggestions, and Absinthe mode</p>
+                 <hr class="dashed">
+             </div>
+
+             <div class="push--bottom">
+                 <h3 class="color--sky">2. Share</h3>
+                 <p class="feature-text">send to close friends or the world for feedback, reactions, and critique</p>
+                 <hr class="dashed">
+             </div>
+
+             <div class="push--bottom">
+                 <h3 class="color--sky">3. Revise</h3>
+                 <p class="feature-text">send to close friends or the world for feedback, reactions, and critique</p>
+                 <hr class="dashed">
+             </div>
+
+             <div class="push--bottom">
+                 <h3 class="color--sky">2. Publish</h3>
+                 <p class="feature-text">get the attention of a community of small publishers or use DraftPress to self publish a chapbook</p>
+                 <hr class="dashed">
+             </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
 {% endblock content %}

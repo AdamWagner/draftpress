@@ -1,0 +1,53 @@
+
+label
+    cursor:pointer
+    padding:0.333em
+    width:100%
+    margin:0.25em 0
+    display:inline-block
+
+    &:hover
+        background: cloud
+
+    &.selected
+        background: lighten(sky, 90%)
+
+
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"]
+
+    box-shadow: none
+    -webkit-appearance: none
+
+
+    background: darken(cloud,5%)
+    border: solid btn-border-width transparent
+    padding: 0.5em
+    margin:0.5em 0
+    line-height:2
+    border-radius: brand-round
+    font-size:inherit
+    width:100%
+
+    input-placeholder-color(sidewalk)
+
+    &:hover
+        background: darken(cloud, 8%)
+
+    &:focus
+        background: darken(cloud, 10%)
+        border: solid btn-border-width darken(cloud, 15%)
+        outline:none

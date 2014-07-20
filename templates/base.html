@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DraftPress</title>
+    <title>Sooo Cute!</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <meta name="viewport" content="minimal-ui, width=device-width, user-scalable=no, maximum-scale=1, initial-scale=1">
+     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700,500' rel='stylesheet' type='text/css'>
+
+     <!-- inject:css -->
+     <link rel="stylesheet" href="{{STATIC_URL}}css/main-a9364203.css">
+     <!-- endinject -->
+
+     <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+     for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+     mixpanel.init("8a6f070c6c5bfa47b9833bb1d19d4925");</script><!-- end Mixpanel -->
 </head>
-<body>
+
+<body ng-app="app">
+
 
 {% block content %}
 
 {% endblock content %}
+
+<!-- inject:js -->
+<script src="{{STATIC_URL}}js/build/marketing-c5530481.js"></script>
+<!-- endinject -->
 
 </body>
 </html>

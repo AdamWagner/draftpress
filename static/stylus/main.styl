@@ -1,0 +1,62 @@
+@require('reset')
+@require('vars')
+@require('breakpoints')
+@require('widths')
+@require('utils')
+@require('button')
+@require('form')
+@require('scrollfix')
+
+*, *:after, *:before
+    box-sizing: border-box
+
+global-padding()
+    padding:1em 0.25em
+    +above(tablet)
+        padding:1em
+
+h2,h3,h4,h5,h6
+    font-weight:500
+
+
+body
+    color: asphalt
+    line-height:1.6em
+    font-family: 'Roboto', sans-serif;
+    font-size:1.1em
+    +above(tablet)
+        font-size:1.2em
+
+.wrapper
+    max-width: 700px
+    global-padding()
+
+
+
+hr
+    height:0
+    border: none
+    border-top: solid 1px lighten(sidewalk, 60%)
+
+    &.dashed
+        border-top: dashed 1px lighten(sidewalk, 60%)
+
+
+.modal
+    position:fixed
+    top:0
+    bottom:0
+    left:0
+    right:0
+    background:white
+    z-index:999
+    padding-top:20%
+
+
+.feature-text
+    margin-left:auto
+    margin-right:auto
+    color:sidewalk
+    +above(tablet)
+        width:66%
+    @extend .text--small

@@ -1,0 +1,25 @@
+{
+  "name": "draftpress",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+   "devDependencies": {
+    "gulp": "~3.4.0",
+    "stylus": "~0.42.1",
+    "tiny-lr": "0.0.5",
+    "gulp-concat": "~2.1.7",
+    "gulp-livereload": "~0.2.0",
+    "gulp-inject": "~0.2.2",
+    "gulp-rev": "~0.2.1",
+    "gulp-notify": "~0.4.0",
+    "gulp-autoprefixer": "0.0.5",
+    "gulp-gzip": "0.0.4",
+    "gulp-uglify": "~0.2.0",
+    "gulp-cssmin": "^0.1.3"
+  }
+}
