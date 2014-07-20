@@ -11,11 +11,15 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Static asset configuration
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
+print BASE_DIR
+print PROJECT_DIR
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(PROJECT_DIR, 'static'),
 )
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +35,7 @@ TEMPLATE_DEBUG = True
 
 
 TEMPLATE_DIRS = (
-    BASE_DIR + '/templates/'
+    os.path.join(PROJECT_DIR, 'templates'),
 )
 
 ALLOWED_HOSTS = []
