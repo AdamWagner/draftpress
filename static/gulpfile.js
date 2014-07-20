@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     uglify = require('gulp-uglify'),
     cssmin = require('gulp-cssmin'),
+    ngmin = require('gulp-ngmin'),
     autoprefixer = require('gulp-autoprefixer'),
     server = lr();
 
