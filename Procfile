@@ -1,1 +1,1 @@
-web: gunicorn drafpress.wsgi --log-file -
+web: gunicorn --pythonpath draftpress draftpress.wsgi --log-file -

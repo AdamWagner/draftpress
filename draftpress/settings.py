@@ -15,8 +15,6 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
-print BASE_DIR
-print PROJECT_DIR
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
