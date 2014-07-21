@@ -23,6 +23,9 @@
 .fill--white
     background:white
 
+.fill--cloud
+    background:cloud
+
 .list--unstyled
   list-style:none
   &, & li
@@ -50,14 +53,16 @@
 /* Spacing */
 
 .push--bottom
-    margin-bottom:1em
+    margin-bottom:base-spacing-em
 
 .push--top
-    margin-top:1em
+    margin-top:base-spacing-em
 
 .push--ends
-    margin-top:1em
-    margin-bottom:1em
+    margin-top:base-spacing-em
+    margin-bottom:base-spacing-em
+
+
 
 .push-half--bottom
     margin-bottom:0.5em
@@ -65,16 +70,39 @@
 .push-half--top
     margin-top:0.5em
 
+
+.push-flex--ends
+    margin-top:5%
+    margin-bottom:5%
+
+.push-flex--right
+    margin-right:5%
+
 .soft
-    padding: 1em
+    padding: base-spacing-em
+
+.soft--top
+    padding-top: base-spacing-em
+
+.soft-half--top
+    padding-top: unit(base-spacing/2, 'em')
+
+.soft--bottom
+    padding-bottom: base-spacing-em
 
 .soft--ends
-    padding-top: 1em
-    padding-botom: 1em
+    padding-top: base-spacing-em
+    padding-bottom: base-spacing-em
 
 .soft--sides
-    padding-left: 1em
-    padding-right: 1em
+    padding-left: base-spacing-em
+    padding-right: base-spacing-em
+
+
+.keyline--bottom
+  border-bottom: solid 1px concrete
+  &.dashed
+    border-bottom: dashed 1px concrete
 
 /* Typography */
 .text--normal

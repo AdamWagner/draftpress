@@ -2,18 +2,29 @@
 
 {% block content %}
 
-    <div ng-controller="Controller" class="wrapper center">
+    <div ng-controller="Controller" class="center">
 
         <div class="text--center" id="top">
 
-             <h1 class="color--sky">DraftPress</h1>
-             <p class="text--light">community for poets and creative writers</p>
-             <img src="{{STATIC_URL}}images/draftpress.png" alt="Poetic community and tools for poets and writers" class="push--ends eight-tenths soft--sides">
-             <div ng-hide="yepMode || nopeMode || !showSurvey" ui-scrollfix class="fill--white">
+             <header class="push-flex--ends wrapper center">
+                 <h1 class="color--sky">DraftPress</h1>
+                 <p class="text--light push-half--top">community for poets and creative writers</p>
+             </header>
+
+             <div class="fill--cloud push--ends soft-half--top keyline--bottom" style="line-height:0">
                 <div class="wrapper center">
+                    <img src="{{STATIC_URL}}images/draftpress.png" alt="Poetic community and tools for poets and writers" class="soft--sides eight-tenths">
+                </div>
+             </div>
+
+             <div class="wrapper center">
+
+             <div ng-hide="yepMode || nopeMode || !showSurvey" ui-scrollfix class="fill--white">
+                <div class="wrapper center ">
                     <p>Would you use DraftPress?</p>
                     <span ng-click="yepMode = !yepMode; yesPlease()" class="btn--strawberry four-tenths force-width">Yes<span class="hide--tablet">, looks interesting!</span></span>
-                    <span ng-click="nopeMode = !nopeMode; noThanks()"class="btn--sky four-tenths force-width">No<span class="hide--mobile">, sorry</span></span>
+                    &nbsp;
+                    <span ng-click="nopeMode = !nopeMode; noThanks()" class="btn--sky four-tenths force-width">No<span class="hide--mobile">, sorry</span></span>
                 </div>
              </div>
 
@@ -76,38 +87,30 @@
              <br>
              <hr class="dashed">
 
-             <div class="push--bottom">
+             <div class="soft--ends keyline--bottom dashed">
                  <h3 class="color--sky">1. Write</h3>
                  <p class="feature-text">a simple editor with structural analysis, rhyme suggestions, and Absinthe mode</p>
-                 <hr class="dashed">
              </div>
 
-             <div class="push--bottom">
+             <div class="soft--ends keyline--bottom dashed">
                  <h3 class="color--sky">2. Share</h3>
                  <p class="feature-text">send to close friends or the world for feedback, reactions, and critique</p>
-                 <hr class="dashed">
              </div>
 
-             <div class="push--bottom">
+             <div class="soft--ends keyline--bottom dashed">
                  <h3 class="color--sky">3. Revise</h3>
                  <p class="feature-text">update based on reactions and critiques</p>
-                 <hr class="dashed">
              </div>
 
-             <div class="push--bottom">
+             <div class="soft--ends keyline--bottom dashed">
                  <h3 class="color--sky">2. Publish</h3>
                  <p class="feature-text">get the attention of a community of small publishers or use DraftPress to self publish a chapbook</p>
-                 <hr class="dashed">
              </div>
 
+             </div>
         </div>
 
-
-
-
-
     </div>
-
 
 
 {% endblock content %}
