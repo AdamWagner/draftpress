@@ -9,6 +9,8 @@ app.controller('Controller', function($scope, $http, $location, $anchorScroll, f
 
     $scope.showSurvey = true;
 
+    mixpanel.track('View Landing Page');
+
     $scope.nopeOptions = [
         "I'm not really into poetry",
         "I already use something else",
