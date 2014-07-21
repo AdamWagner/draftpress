@@ -908,6 +908,9 @@ th {
 .push--bottom {
   margin-bottom: 1.68em;
 }
+.push-half--bottom {
+  margin-bottom: 0.84em;
+}
 .push--top {
   margin-top: 1.68em;
 }
