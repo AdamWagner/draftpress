@@ -1,0 +1,10 @@
+
+keyline-color =  concrete
+
+dirs = 'bottom', 'top', 'left', 'right'
+
+for dir in dirs
+    .keyline--{dir}
+        border-{dir}: solid 1px keyline-color
+        &.dashed
+          border-{dir}: dashed 1px keyline-color

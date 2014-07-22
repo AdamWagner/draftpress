@@ -1,0 +1,88 @@
+/* --------------------------------------------------------------------------------------- *\
+  Vars
+/* --------------------------------------------------------------------------------------- */
+
+sides = 'left', 'right'
+ends = 'top', 'bottom'
+
+sizes = {
+    '': unit(baseSpace, 'em'),
+    '-half': unit(baseSpace/2, 'em'),
+    '-perc': unit(5, '%'),
+}
+
+/* --------------------------------------------------------------------------------------- *\
+  Add margins and padding
+/* --------------------------------------------------------------------------------------- */
+
+for key, val in sizes
+
+    /* defaults */
+    .push{key}
+        margin:val
+
+    .soft{key}
+        margin:val
+
+    /* directionals */
+    for dir in dirs
+        .push{key}--{dir}
+            margin-{dir}: val
+
+        .soft{key}--{dir}
+            padding-{dir}: val
+
+    /* dir combos */
+    .push{key}--ends
+        for dir in ends
+            margin-{dir}: val
+
+    .push{key}--sides
+        for dir in sides
+            margin-{dir}: val
+
+    .soft{key}--ends
+        for dir in ends
+            padding-{dir}: val
+
+    .soft{key}--sides
+        for dir in sides
+            padding-{dir}: val
+
+
+/* --------------------------------------------------------------------------------------- *\
+  Remove margins & padding
+/* --------------------------------------------------------------------------------------- */
+
+.flush
+    margin:0!important
+
+.hard
+    margin:0!important
+
+for dir in dirs
+    .flush--{dir}
+        margin-{dir}: 0!important
+
+    .hard--{dir}
+        padding-{dir}: 0!important
+
+.flush--sides
+    for dir in sides
+        margin-{dir}: 0!important
+
+ .flush--ends
+    for dir in ends
+        margin-{dir}: 0!important
+
+.hard--sides
+    for dir in sides
+        padding-{dir}: 0!important
+
+ .hard--ends
+    for dir in ends
+        padding-{dir}: 0!important
+
+
+
+

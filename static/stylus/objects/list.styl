@@ -1,0 +1,44 @@
+
+.list--unstyled
+  list-style:none
+  &, & li
+    margin:0
+    padding:0
+
+/*------------------------------------*\
+    BLOCK-LIST
+\*------------------------------------*/
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
+ */
+
+.list--block
+    @extend .list--unstyled
+    border-top:solid 1px baseColor
+
+    >li
+        border-bottom: solid 1px baseColor
+        padding: unit(baseSpace/2, 'em')
+
+        .block-list__link
+            display:block
+            padding: unit(baseSpace/2, 'em')
+            margin: -unit(baseSpace/2, 'em')
+
+     &.dashed
+      border-top:dashed 1px baseColor
+      >li
+        border-bottom:dashed 1px baseColor
+

@@ -198,14 +198,9 @@ grid-setup(namespace= "")
     .{namespace}eleven-twelfths
         width:91.666%
 
-
-
 grid-setup()
 
-
-
-
-+below(480px)
++below(screens[mobile])
     .one-half,
     .one-third, .two-thirds,
     .one-quarter, two-quarters, three-quarters,
@@ -217,11 +212,11 @@ grid-setup()
         &:not(.force-width)
             width: 100%!important;
 
-+above(768px)
++above(screens[tablet])
     grid-setup('tablet-')
 
-+above(1280px)
++above(screens[desk])
     grid-setup('desk-')
 
-+above(1920px)
++above(screens[huge])
     grid-setup('huge-')

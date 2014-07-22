@@ -1,5 +1,7 @@
 @require('reset')
+
 @require('vars')
+
 @require('breakpoints')
 @require('widths')
 @require('utils')
@@ -7,39 +9,34 @@
 @require('form')
 @require('scrollfix')
 
+/* Objects */
+@require('objects/list')
+@require('objects/horizontal-rule')
+
+
 *, *:after, *:before
     box-sizing: border-box
 
 global-padding()
     padding:1em 0.25em
-    +above(tablet)
+    +above(screens.tablet)
         padding:0
+
 
 h2,h3,h4,h5,h6
     font-weight:500
-
 
 body
     color: asphalt
     line-height:1.6em
     font-family: 'Roboto', sans-serif;
     font-size:1.1em
-    +above(tablet)
+    +above(screens.tablet)
         font-size:1.5em
 
 .wrapper
     max-width: 800px
     global-padding()
-
-
-
-hr
-    height:0
-    border: none
-    border-top: solid 1px concrete
-
-    &.dashed
-        border-top: dashed 1px concrete
 
 
 .modal
@@ -57,6 +54,6 @@ hr
     margin-left:auto
     margin-right:auto
     color:sidewalk
-    +above(tablet)
+    +above(screens.tablet)
         width:66%
     @extend .text--small

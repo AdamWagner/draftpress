@@ -50,41 +50,26 @@
       outline:none
 
 /*------------------------------------*\
-    TYPES
+    Button types
 \*------------------------------------*/
-.btn--sky
-  @extend .btn
-  border: solid btn-border-width sky
-  border-radius: brand-round
-  color:sky
 
-  &:hover
-    background:lighten(sky, 95%)
+colored-button(color)
+  .btn--{color}
+    @extend .btn
+    border: solid btn-border-width colors[color]
+    border-radius: brand-round
+    color: colors[color]
 
-  &:active
-    background:lighten(sky, 90%)
+    &:hover
+      background:lighten(colors[color], 95%)
 
-.btn--strawberry
-  @extend .btn
-  border: solid btn-border-width strawberry
-  color:strawberry
+    &:active
+      background:lighten(colors[color], 90%)
 
-  &:hover
-    background:lighten(strawberry, 95%)
+colored-button('sky')
+colored-button('strawberry')
+colored-button('sidewalk')
 
-  &:active
-    background:lighten(strawberry, 90%)
-
-.btn--sidewalk
-  @extend .btn
-  border: solid btn-border-width sidewalk
-  color:sidewalk
-
-  &:hover
-    background:lighten(sidewalk, 95%)
-
-  &:active
-    background:lighten(sidewalk, 90%)
 
 /*------------------------------------*\
     BLOCK BUTTONS

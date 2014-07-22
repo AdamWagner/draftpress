@@ -1,153 +1,76 @@
 
+/* --------------------------------------------------------------------------------------- *\
+  Vars
+/* --------------------------------------------------------------------------------------- */
+
+dirs = 'bottom', 'top', 'left', 'right'
+
+/* --------------------------------------------------------------------------------------- *\
+  Imports
+/* --------------------------------------------------------------------------------------- */
+@require('utils/spacing')
+@require('utils/color')
+@require('utils/keylines')
+
+/* --------------------------------------------------------------------------------------- *\
+  Angular
+/* --------------------------------------------------------------------------------------- */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
+/* --------------------------------------------------------------------------------------- *\
+  Typography
+/* --------------------------------------------------------------------------------------- */
 
-.color--sky
-    color: sky
+/* weights */
+weights = {
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'bold': 700,
+}
 
-.color--asphalt
-    color: asphalt
-
- .color--sidewalk
-    color: sidewalk
-
- .color--dyellow
-    color: dyellow
-
- .color--strawberry
-    color: strawberry
-
-
-.fill--white
-    background:white
-
-.fill--cloud
-    background:cloud
-
-.list--unstyled
-  list-style:none
-  &, & li
-    margin:0
-    padding:0
+for weight, val in weights
+  .text--{weight}
+    font-weight: val
 
 
-.center
-    margin-left: auto
-    margin-right: auto
+/* text sizes */
+text-sizes = {
+  'small': 0.85em,
+  'med': 0.9em,
+}
 
+for size, val in text-sizes
+  .text--{size}
+    font-size: val
 
-.link-appearance
-  text-decoration: underline
-  cursor:pointer
-
-/* Opacity */
-
-.fade-out--50
-    opacity:0.5
-
-.fade-out--80
-    opacity:0.2
-
-/* Spacing */
-
-.push--bottom
-    margin-bottom:base-spacing-em
-
-.push-half--bottom
-    margin-bottom: unit(base-spacing/2, 'em')
-
-.push--top
-    margin-top:base-spacing-em
-
-.push--ends
-    margin-top:base-spacing-em
-    margin-bottom:base-spacing-em
-
-
-
-.push-half--bottom
-    margin-bottom:0.5em
-
-.push-half--top
-    margin-top:0.5em
-
-
-.push-flex--ends
-    margin-top:5%
-    margin-bottom:5%
-
-.push-flex--right
-    margin-right:5%
-
-.soft
-    padding: base-spacing-em
-
-.soft--top
-    padding-top: base-spacing-em
-
-.soft-half--top
-    padding-top: unit(base-spacing/2, 'em')
-
-.soft--bottom
-    padding-bottom: base-spacing-em
-
-.soft--ends
-    padding-top: base-spacing-em
-    padding-bottom: base-spacing-em
-
-.soft--sides
-    padding-left: base-spacing-em
-    padding-right: base-spacing-em
-
-
-.keyline--bottom
-  border-bottom: solid 1px concrete
-  &.dashed
-    border-bottom: dashed 1px concrete
-
-/* Typography */
-.text--normal
-    font-weight:400
-
-.text--light
-    font-weight:300
-
-.text--bold
-    font-weight:700
-
-.text--med
-    font-size:0.9em
-
-.text--small
-    font-size:0.85em
-
-.text--center
-    text-align:center
-
-.text--left
-    text-align:left
+/* alignment */
+alignments = left, center, right, justified
+for align in alignments
+  .text--{align}
+    text-align:align
 
 p
     margin-bottom:0.5em
 
+/* --------------------------------------------------------------------------------------- *\
+  Images
+/* --------------------------------------------------------------------------------------- */
 
-/* Images */
 img
     width:100%
 
 
 .unselectable
   -webkit-touch-callout: none
-  -webkit-user-select: none
-  -khtml-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
   user-select: none
 
+/* --------------------------------------------------------------------------------------- *\
+   Mixins
+/* --------------------------------------------------------------------------------------- */
 
-/*- Style text color in input placeholders -*/
 input-placeholder-color(color)
   &::-webkit-input-placeholder
    color: color
@@ -157,3 +80,20 @@ input-placeholder-color(color)
 
   &:-ms-input-placeholder
    color: color
+
+
+.center
+    margin-left: auto
+    margin-right: auto
+
+.link-appearance
+  text-decoration: underline
+  cursor:pointer
+
+/* Opacity */
+.fade-out--50
+    opacity:0.5
+
+.fade-out--80
+    opacity:0.2
+

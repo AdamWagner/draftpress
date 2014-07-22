@@ -1,0 +1,35 @@
+ <div ng-show="nopeMode" class="modal" ng-cloak>
+
+    <div class="soft--sides two-thirds tablet-one-half desk-one-third center">
+
+         <h3 class="text--normal color--sky">No hard feelings</h3>
+
+         <br>
+
+         <ul class="list--unstyled text--left text--small center">
+
+             <li ng-repeat="option in nopeOptions">
+                <label ng-class="{'selected': selection.indexOf(option) > -1}">
+                  <input
+                    type="checkbox"
+                    name="selectedNopeOptions[]"
+                    value="{{option}}"
+                    ng-checked="selection.indexOf(option) > -1"
+                    ng-click="toggleSelection(option)"
+                  > {[{option}]}
+                </label>
+             </li>
+
+         </ul>
+
+         <hr>
+
+         <div class="text--small push--top">
+             <span ng-click="nopeMode = !nopeMode" class="link-appearance color--sidewalk">cancel</span>
+             &nbsp;
+             &nbsp;
+             <span ng-click="sendNopeReasons()" class="btn--strawberry">Send feedback</span>
+         </div>
+
+    </div>
+ </div>

@@ -22,26 +22,15 @@ above(num)
   @media condition
     {block}
 
+/* Hide below screen size */
+for screen, val in screens
+  .hide--{screen}
+    +below(val)
+      display: none!important
 
-
-mobile = 480px
-tablet = 769px
-desk = 1024px
-
-
-.hide--large
-    +above(1200px)
-        display: none!important
-
-.hide--tablet
-  +below(tablet)
-    display:none!important;
-
-.hide--mobile
-  +below(mobile)
-    display:none!important;
-
-.show--mobile
-  display: none
-  +below(mobile)
-    display:block
+/* Show below screen size */
+for screen, val in screens
+  .show--{screen}
+    display: none!important
+    +below(val)
+      display: block
