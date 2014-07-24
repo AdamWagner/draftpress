@@ -9,6 +9,7 @@ app.controller('Controller', function($scope, $http, $location, $anchorScroll, f
 
     $scope.showSurvey = true;
 
+    mixpanel.register({'date': new Date().toDateString()}, 100);
     mixpanel.track('View Landing Page');
 
     $scope.nopeOptions = [

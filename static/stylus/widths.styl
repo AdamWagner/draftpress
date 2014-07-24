@@ -200,7 +200,7 @@ grid-setup(namespace= "")
 
 grid-setup()
 
-+below(screens[mobile])
++below(screens.mobile)
     .one-half,
     .one-third, .two-thirds,
     .one-quarter, two-quarters, three-quarters,
@@ -212,11 +212,11 @@ grid-setup()
         &:not(.force-width)
             width: 100%!important;
 
-+above(screens[tablet])
++above(screens.tablet)
     grid-setup('tablet-')
 
-+above(screens[desk])
++above(screens.desk)
     grid-setup('desk-')
 
-+above(screens[huge])
++above(screens.huge)
     grid-setup('huge-')
